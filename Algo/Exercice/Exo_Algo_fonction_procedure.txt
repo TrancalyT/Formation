@@ -1,0 +1,146 @@
+algo exo permutation_fonction
+
+variables
+	a, b : entier;
+	
+procédure permutation (var x: entier, var y : entier) : {
+	variables
+		z : entiers;
+		
+	z := x;
+	x := y;
+	y := z;
+}
+	
+debut
+ 
+	saisir("Saisir un nombre (a) : ", a);
+	saisir("Saisir un nombre (b) : ", b);
+	
+	permutation (a, b);
+	afficher (a, b);
+	
+fin
+
+--------------------------------------------
+
+algo exo factorielle_fonction
+
+variables
+	
+	
+fonction facto (x : entier) : entier {
+	variables
+		i, factorielle : entiers;
+		
+	factorielle := 1
+	
+	for (i := 1; i <= x ; i++)
+		factorielle = factorielle * i
+	end_for
+	
+	return factorielle
+}
+
+début
+
+	afficher(facto(8))
+	
+fin
+
+--------------------------------------------
+
+algo exo prixTTC_fonction
+
+variables
+	
+
+function prixTTC (prixHT : float, tva : integer, quantite : integer) : float {
+	variables
+		prixTTC: float
+		
+	prixTTC := (prixHT + prixHT * tva / 100) * quantite;
+
+	return prixTTC
+}
+
+début
+
+	afficher(prixTTC(15.5, 20, 5))
+	
+fin
+
+--------------------------------------------
+
+algo exo factorielleSansBoucle_fonction
+
+variables
+	
+	
+%% fonction facto (x : entier) : entier {
+	variables
+		
+	if (x := 1) {
+		return 1
+	} else {
+		return x * facto(x-1) 
+	}
+}
+
+début
+
+	afficher(facto(8))
+	
+fin %%
+
+UTILISER LES FONCTIONS RECURSIVES (permet de "boucler" une fonction en appelant la fonction dans la fonction (voir cours)).
+
+--------------------------------------------
+
+algo exo tri_tableau_fonction
+
+CHECK CORRECTION
+
+--------------------------------------------
+
+algo exo tableaunotes_fonction
+
+variables
+	marks(3,5) : array of integers,
+
+function upperMarks (var t : array of integer) : integer {
+	variables
+		i, j, sum, sumStudent, counter : integer,
+		classAverage, averageStudent : float;
+		
+		sum := 0;
+		for(i:=0; i < 3; i++){
+			for(j:=0; j < 5; j++){
+				sum := sum + t(i,j); 
+			}
+		}
+		
+		classAverage := sum / 15;
+	
+		for(i:=0; i < 3; i++){
+			sumStudent := 0;
+				for(j:=0; j < 5; j++){
+					sumStudent := sumStudent + t(i,j);
+				}
+			averageStudent := sumStudent / 5;
+				if(averageStudent >= classAverage){
+					counter++;
+				}
+		}
+		return counter
+	}
+
+Begin
+
+	display (upperMarks(marks (3,5)) 
+	
+End
+
+
+	
+	

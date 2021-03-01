@@ -1,0 +1,247 @@
+algo exo 5.1
+
+variables
+	valeurUser : entiers
+	
+début
+	
+	répéter;
+		saisir ("Saisir votre nombre "; valeurUser)
+	jusqu'à (userValeur > 0 et userValeur < 4)
+	
+	afficher ("Bravo, vous avez saisi le bon numéro")
+
+fin
+
+// SOLUTION QUI NE FONCTIONNE PAS CORRIGE
+
+variables
+	valeurUser : entiers
+	estCorrect : booléen
+	
+début
+
+	saisir ("Saisir votre nombre : "), userValeur;
+	estCorrect := userValeur > 0 et userValeur < 4
+	
+	tant_que (!estCorrect)
+		saisir ("Saisir votre nombre : "),userValeur
+		estCorrect = userValeur > 0 et userValeur < 4 // <-- Ici on incrémente en redefinissant le booléen estCorrect avec le nouveau nombre saisi
+	fin_tant_que
+	
+fin
+
+---------------------------------------------------------------
+
+algo exo 5.2
+
+variables
+	valeurUser : entiers
+	
+début
+
+	saisir ("Saisir votre nombre : "), valeurUser;
+	
+	répéter;
+		saisir ("Veuillez entrer une nouvelle valeur"; valeurUser)
+		si (valeurUser < 10) {
+			afficher ("Plus grand !")
+			} sinon si (valeurUser > 20) {
+			afficher ("Plus petit !")
+			}
+	jusqu'à (valeurUser > 9 et valeurUser < 21);
+	
+	afficher ("Bravo, vous avez saisi le bon numéro")
+	
+fin
+
+---------------------------------------------------------------
+
+algo exo 5.3
+
+variables
+	valeurUser, i : entiers
+	
+début
+
+	saisir ("Saisir votre nombre : "), valeurUser;
+	
+	pour (valeurUser = valeurUser + 1; valeurUser <= (valeurUser + 10); valeurUser++)
+		afficher (valeurUser)
+	fin_pour
+	
+	OU ON PEUT FAIRE
+	
+	pour (i:= 1; i < 11; i++)
+		afficher (nombre + i)
+	fin_pour
+	
+fin
+
+---------------------------------------------------------------
+
+algo exo 5.4
+
+variables
+	valeurUser, i : entiers
+	
+début
+
+	saisir ("Saisir votre nombre : "), valeurUser;
+	
+	pour (i:= 1; i < 11; i++)
+		afficher (valeurUser, " x " i, " = " (valeurUser, * i,))
+	fin_pour
+fin
+
+---------------------------------------------------------------
+
+algo exo 5.5
+
+variables
+	userValeur, i, resultat : entiers
+	
+début
+
+	saisir ("Saisir votre nombre : "), userValeur;
+	resultat := 0
+	
+	pour (i := 1; i <= userValeur; i++)
+		resultat = i + resultat
+	fin_pour
+	
+	afficher (resultat)
+
+fin
+
+---------------------------------------------------------------
+
+algo exo 5.6
+
+variables
+		userValeur, i, resultat : entiers
+		
+début
+
+	saisir ("Saisir votre nombre : "), userValeur;
+	resultat := 1
+	
+	pour (i:=1; i <= userValeur; i++)
+		resultat = i * resultat
+	fin_pour
+	
+	afficher (resultat)
+	
+fin
+
+---------------------------------------------------------------
+
+algo 5.7
+
+variables
+	userValeur, i, plusGrand, indicePlusGrand : entiers
+	
+début
+	
+	indicePlusGrand := 0
+	
+	pour (i:=1; i < 21; i++)
+		saisir ("Saisir votre nombre numéro" i; : ), userValeur; 
+			si (i = 1) {
+			plusGrand = userValeur et indicePlusGrand = 1
+			}
+			si (plusGrand < userValeur){
+			plusGrand = userValeur et indicePlusGrand = i
+			}
+	fin_pour
+	
+	afficher ("Le nombre le plus grand est : " plusGrand,);
+	afficher ("C'était le nombre numéro : " indicePlusGrand,);
+	
+fin
+
+---------------------------------------------------------------
+
+algo 5.8
+
+variables
+	userValeur, i, plusGrand, indicePlusGrand : entiers
+	
+début
+
+	indicePlusGrand := 0
+	i := 1
+	
+	répéter {
+		saisir ("Saisir votre nombre numéro" i; : ), userValeur;
+			si (i = 1) {
+			plusGrand = userValeur et indicePlusGrand = 1
+			}
+			si (plusGrand < userValeur){
+			plusGrand = userValeur et indicePlusGrand = i
+			}
+		i++;
+	} jusqu'à (userValeur = 0)
+	
+	afficher ("Le nombre le plus grand est : " plusGrand,);
+	afficher ("C'était le nombre numéro : " indicePlusGrand,);
+	
+fin
+
+---------------------------------------------------------------
+
+algo 5.9
+
+variables
+	prix, somme, aPaye, paye, remise, i : entiers
+	
+début
+
+	i := 1
+
+	tant_que (i != 0)
+		saisir ("Saisir les prix : "), prix;
+		somme = prix + somme
+		si (prix = 0) {
+		i = 0
+		}
+		i++;
+	fin_tant_que
+	
+	afficher ("Le total est de : " somme,);
+	paye := somme
+	
+	répéter {
+		saisir ("Restant à payer : "), aPaye
+		aPaye = somme - aPaye
+		si ( aPaye >= somme) {
+		i = 0
+		}
+		i++;
+	} jusqu'à (i != 0)
+fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

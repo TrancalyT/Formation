@@ -1,0 +1,21 @@
+p{
+    color:brown;
+    font-size : 19px;
+    background-color: yellowgreen;
+}
+
+
+body{
+    color : rgba(12, 57, 124, 0.726);
+    font-size : 21px;
+    background-color: slateblue;
+}
+
+ul, ol{
+    color : green;
+    font-size : 31px;
+}
+
+#reveil{
+    float : left;
+}

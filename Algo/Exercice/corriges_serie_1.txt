@@ -1,0 +1,78 @@
+algorithme permutation
+variables
+	a,b,c : entier;
+debut
+	% afficher("Saisir un nombre (a) : "); %
+	% saisir(a); %
+	saisir("Saisir un nombre (a) : ", a);
+	saisir("Saisir un nombre (b) : ", b);
+	
+	c := a;
+	a <- b;
+	b := c;
+	
+	afficher(a, b);
+fin
+
+algoithme carre
+variables
+	nombre, carre : entier;
+	
+Debut
+	saisir("Saisir un nombre :", nombre);
+	% carre := nombre * nombre; %
+	% nombre := nombre * nombre %
+	afficher(nombre * nombre);
+Fin
+
+algorithme TTC
+
+varaibles 
+	prixHt, quantite, tva, total, totalHt, totalTaxe : entier
+
+debut
+	saisir("Saisir le prix hors taxe : ", prixHt);
+	saisir("Saisir la quantite : ", quantite);
+	saisir("Saisir le taux de TVA (entre 0 et 100) : ", tva);
+	
+	% totalHt := prixHt * quantite; %
+	
+	% total := totalHt + totalHt * tva / 100; %
+	% total := totalHt * (1 + tva / 100); %
+	
+	total := (prixHt + prixHt * tva / 100) * quantite;
+	
+	afficher("Le total de votre achat est de : ", total);
+fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

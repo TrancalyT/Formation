@@ -1,0 +1,182 @@
+algo ex4.4
+
+variables
+	prixA, prixB, prixC, quantite : réel
+	
+début
+	
+	saisir "Saisir la quantité : "; quantité
+	% prixA := 0,10 * quantite
+	prixB := 0,09 * (quantite - 10) + prixA
+	prixC := 0,08 * (quantite - 30) + prixA + prixB %
+	si
+		quantite < 11 alors {prixA := 0,10 * quantite
+							afficher ("Le prix est de : " prixA)};
+	sinon si
+		quantite < 31 alors {prix B := 0,09 * (quantite - 10) + (0,10 * quantite) 
+							afficher ("Le prix est de : " prixB)};
+	sinon
+		{prixC := 0,08 * (quantite - 30) + (0,10 * quantite) + (0,09 * (quantite - 10) + (0,10 * quantite))
+		afficher ("Le prix est de : " prixC)};
+		 finsi
+	finsi
+	
+fin
+
+---------------------------------------------------------------
+
+algo ex4.5
+
+variables
+	sexe : string; 
+	age : entiers;
+	
+début
+
+	saisir "Saisir sexe H/F : "; sexe
+	saisir "Saisir âge : "; age
+	si 
+		sexe = "H" et age > 20 alors afficher ("Vous êtes imposable")
+	sinon si
+		sexe = "F" et age > 18 et age < 30 alors afficher ("Vous n'êtes pas imposable")
+	sinon afficher ("Vous n'êtes pas imposable")
+		  finsi
+	finsi
+	
+fin
+
+VARIANTE
+
+variables
+	sexe : string; 
+	age : entiers;
+	estFemmeImposable, estHommeImposable : booléen;
+	
+début
+
+	saisir "Saisir sexe H/F : "; sexe
+	saisir "Saisir âge : "; age
+	estFemmeImposable := sexe = "F" et age > 18 et age < 30
+	estHommeImposable := sexe = "H" et age > 20
+	si 
+		estFemmeImposable ou estHommeImposable alors afficher ("Vous êtes imposable")
+	sinon afficher ("Vous n'êtes pas imposable")
+	finsi
+	
+fin
+
+---------------------------------------------------------------
+
+algo ex4.6
+
+variables
+	candidat; scoreCandid, score1, score2, score3 : réels
+	
+début
+
+	saisir ("Saisir nom du candidat : "); candidat
+	saisir ("Saisir son score (en pourcentage) : "); scoreCandid
+	score1 :=
+	score2 :=
+	score3 :=
+	si 
+		score 1 > 50 ou score 2 > 50 ou score 3 > 50 alors afficher (candidat; " est battu, sayonara")
+			sinon si
+				scoreCandid > 50 alors afficher (candidat; " est élu dès le premier tour");
+					sinon si 
+						scoreCandid >= 12.5 et scoreCandid > score1 et scoreCandid > score2 et scoreCandid > score3 alors afficher (candidat; " passe au second tour et est favorable")
+							sinon si
+								scoreCandid >= 12.5 alors afficher (candidat; " passe au second tour et est défavorable")
+									sinon
+										afficher (candidat; " est battu, sayonara")
+							finsi
+					finsi
+			finsi
+	finsi
+	
+fin
+
+---------------------------------------------------------------
+
+algo ex4.7
+
+variables
+	age, anciennetePermis, accident, fidelite : entiers;
+	estRouge, estOrange, estVert, estBleu : booléen;
+	
+début
+
+	saisir ("Saisir l'âge du client : "); age
+	saisir ("Saisir l'ancienneté de permis du client : "); anciennetePermis;
+	saisir ("Saisir le nombre d'accident(s) à l'origine du client : "); accident;
+	saisir ("Saisir l'ancienneté du client au sein de la compagnie : "); fidelite;
+	estRouge := age < 25 et permis < 2 et accident = 0
+	estOrange := age < 25 et permis > 2 et accident = 0 ou age > 25 et permis < 2 et accident = 0
+	estVert := age > 25 et permis > 2 et accident = 0
+	estBleu := estVert et fidelité >= 1
+	si
+		estRouge alors afficher ("Tarif Rouge");
+	sinon
+		!=estOrange !=estVert !=estBleu afficher ("Refusé")
+	finsi
+	si 
+		estOrange alors afficher ("Tarif Orange");
+	sinon si
+		estOrange et accident > 0 alors afficher ("Tarif Rouge");
+		  finsi
+	finsi
+	si 
+		estVert alors afficher ("Tarif Vert");
+	sinon si 
+		estVert et accident = 1 alors afficher ("Tarif Orange");
+	sinon si
+		estVert et accident > 1 alors afficher ("Tarif Rouge");
+		  finsi
+		  finsi
+	finsi
+	si estBleu alors afficher ("Tarif Bleu");
+	finsi
+
+fin
+
+---------------------------------------------------------------
+
+algo ex 4.8
+
+variables
+	jour, mois, année : entiers
+	estBissextile : booléen
+	
+début
+	
+	saisir ("Saisir votre date telle que JJ/MM/AAAA : "); jour, mois, année;
+	estBissextile := année dp 4
+	si
+		mois = 02 alors jour =< 28
+	sinon si
+		mois = 02 et estBissextile alors jour =< 29
+	sinon jour < 31
+		  finsi
+	finsi
+	si 
+		mois = 01 ou mois = 03 ou mois = 05 ou mois = 07 ou mois = 09 ou mois = 11 alors jour < 32
+	sinon jour < 31
+	
+CORRECTION
+
+début
+
+	saisir ("Saisir la date : "jour, mois, année);
+	estBissextile := (année % 4 = 0 et année % 100 != 0) ou année % 400 = 0
+	
+	si (jours > 31 ou mois > 12
+		ou (mois = 02 et ((estBissextile et jours > 29) ou (!estBissextile et jours > 28)))
+		ou (jours > 30 et (mois = 04 ou mois = 06 ou mois = 08 ou mois = 10 ou mois = 12))
+		) {
+		afficher ("date invalide");
+	} sinon {
+		afficher ("date valide");
+	}	
+	
+fin
+		

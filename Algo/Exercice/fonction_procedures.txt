@@ -1,0 +1,292 @@
+algorithme permutation
+variables
+	a, b : entier;  // variables globales
+
+procedure permute(var toto: entier, var tata: entier) {
+	variables 
+		c : entier;   // variables locales
+		
+	c := toto;
+	toto := tata;
+	tata := c;
+}
+
+debut
+	saisir("Saisir un nombre (a) : ", a);
+	saisir("Saisir un nombre (b) : ", b);
+	permute(a, b);	
+	afficher(a, b);
+fin
+
+
+algorithme factorielle
+variables
+	nombre, resultat : integer
+
+fonction factorielle(a : integer) : integer {
+	variables
+		i, fact : integer;
+	if(a = 0){ return 0;}
+	fact := 1;
+	for(i := 1; i <= a; i++){fact := fact * i;}
+	return fact;
+}
+
+Begin
+	prompt("Type the number ", nombre);
+	if(nombre >= 0){
+		% resultat := factorielle(nombre); %
+		display(factorielle(nombre));
+	} else {
+		display("No factorial for negative numbers");
+	}
+	% display(resultat); %
+End
+
+algorithme TTC
+variables 
+	prixHt, quantite, tva, total, totalHt, totalTaxe : entier;
+	
+fonction getTtc(prix : float, quantity : integer, tva : integer) :float{
+	return (prixHt + prixHt * tva / 100) * quantite;
+}
+
+debut
+	saisir("Saisir le prix hors taxe : ", prixHt);
+	saisir("Saisir la quantite : ", quantite);
+	saisir("Saisir le taux de TVA (entre 0 et 100) : ", tva);
+	
+	afficher("Le total de votre achat est de : ", getTtc(prixHt, quantite, tva));
+fin
+
+algorithme 3.6_fonctions_procedures
+variables 
+	age : entier;
+fonction getCategorie(age : integer) :string{
+	si(age >= 12) {
+		return "cadet";
+	} sinon si (age > 9){
+		return"minime";
+	} sinon si (age > 7){
+		return "pupille";
+	} sinon si (age > 5){
+		return "poussin";
+	} sinon {
+		return "Hors catégorie";
+	}
+}
+Debut
+	saisir("Saisir l'age : ", age);
+	% categorie := getCategorie(age); %
+	display(getCategorie(age));
+Fin
+
+algorithme impots
+
+varaibles
+	age : entier;
+	sexe : chaine de caractères;
+	
+fonction estImposable(age:ineteger , sexe: string) :booléen{
+	variables 
+		estFemmeImposable, estHommeImposable : booléen;
+		
+	estFemmeImposable := sexe = "F" et age > 18 et age < 35;
+	estHommeImposable := sexe = "H" et age > 20;
+	
+	si(estFemmeImposable ou estHommeImposable) {
+		return true;
+	} sinon {
+		return false;
+	}
+}
+Debut 
+	saisir(age, sexe);
+	if(!estImposable(age, sexe)){
+		display("Non Imposable");
+	} else {
+		display("Imposable");
+	}
+Fin
+
+algorithme 5.9
+variables 
+	prix, somme, paiement, rendu : entier;
+	
+fonction getSomme() : entier {
+	variables
+		s : entier;
+	s := 0;
+	répéter {
+		saisir("Saisir le prix : ", prix);
+		s := s + prix;
+		
+	} jusqu'a (prix = 0);
+	return s;
+}
+
+procedure afficherCoupons(rendu){
+	
+	tantque(rendu > 0) faire
+		si(rendu >= 10){
+			afficher("10 €");
+			rendu := rendu - 10;
+		} sinon si(rendu >= 5){
+			afficher("5 €");
+			rendu := rendu - 5;
+		} sinon {
+			afficher("1 €");
+			rendu := rendu - 1;
+		}
+	fin_tantque	
+}
+
+debut
+	somme := getSomme();
+	Afficher("La somme est de ", somme);
+	
+	saisir("Saisir le paiement ", paiement);
+	rendu := paiement - somme;
+	
+	afficherCoupons(rendu);
+fin
+
+algo tierce_2
+variables
+	n, p, factorielleP, x, y, i, np :entier;
+	
+fonction getX(n: integer, p:integer) : integer{
+	varaibles 
+		i, x : integer;
+	np := n - p; 
+	x := 1;
+	pour(i := 1, i <= p, i++) faire
+		x := x * (np + i);
+	fin_pour	
+	return x;
+}
+
+fonction factorielle(p : integer) : integer {
+	variables
+		i, factorielleP : integer;
+	
+	factorielleP := 1;
+	pour(i := 1, i <= p, i++) faire
+		factorielleP := factorielleP * i;
+	fin_pour
+	
+	return factorielleP;
+}
+fonction getY(x :integer, factorielleP : integer) : float{
+	return x / factorielleP;
+}
+debut
+	saisir(n, p);
+	x := getX(n, p);
+	factorielleP := factorielle(p);
+	y := getY(x, factorielleP);
+	% y := getX(n, p) /  factorielle(p) %
+	afficher("Dans l'ordre, une chance sur ", x, " de gagner");
+	afficher("Dans le désordre, une chance sur ", y, " de gagner");
+fin	
+
+algorithme tri_tableau
+variables 
+	tab() : array of integer;
+	
+procedure sort(var t : array of integer, isAscendent: boolean){
+	variables
+		i, j, selectedElement ,selectedIndex, temp, size : integer;
+		
+	size := t.length();
+	for(i := 0, i < (size - 1), i++){
+		selectedElement := t(i);
+		selectedIndex := i;
+		for(j := i + 1, j < size, j++){
+			if((isAscendent et t(j) < selectedElement) 
+					ou 
+			   (!isAscendent et t(j) > selectedElement)){
+				selectedIndex := j;
+			}
+		}
+		if(i != selectedIndex){
+			temp := t(i);
+			t(i) := t(selectedIndex);
+			t(selectedIndex) := temp;
+		}
+	}
+}
+Begin
+	prompt(size);
+	redim(tab, size);
+	sort(tab, true);
+	sort(tab, false);
+End
+
+
+
+
+
+Algorithme multidimentional_array
+varaibles
+	marks() : array of integers,
+	i, j, sum, sumStudent, counter, marksSize, studentsSize : integer,
+	classAverage, averageStudent : float;
+
+fonction getClassAverage(tab: array of integers) :float {
+	variables
+		i, j : entier;
+		averageStudent, sumAverages : float;
+	sumAverages := 0;
+	for(i:=0; i < tab.length(); i++){
+		averageStudent := getStudentMarkAverage(tab(i));
+		sumAverages := sumAverages + averageStudent;
+	}
+	return sumAverages / tab.length();
+}
+
+fonction getStudentMarkAverage(t : array of integers) : float {
+	variables
+		i, sumStudent : integer;
+	
+	sumStudent := 0;
+	for(i:=0; i < t.length(); i++){
+		 sumStudent := sumStudent + t(i);
+	}
+	
+	return sumStudent / t.length();
+}
+
+Begin
+	prompt("How many student ", studentsSize);
+	prompt("How many marks ", marksSize);
+	redim(marks, studentSize, marksSize);
+	
+	classAverage := getClassAverage(marks);
+	counter := 0;
+	for(i:=0; i < studentsSize; i++){
+		averageStudent := getStudentMarkAverage(marks(i));
+		if(averageStudent >= classAverage){
+			counter++; % counter := conter + 1 | counter += 1 %
+		}
+	}
+	display(counter, " having their average greater than the class average");
+End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

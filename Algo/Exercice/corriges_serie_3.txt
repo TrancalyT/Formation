@@ -1,0 +1,174 @@
+algorithme permutation
+variables
+	a,b,c : entier;
+debut
+	% afficher("Saisir un nombre (a) : "); %
+	% saisir(a); %
+	saisir("Saisir un nombre (a) : ", a);
+	saisir("Saisir un nombre (b) : ", b);
+	
+	c := a;
+	a <- b;
+	b := c;
+	
+	afficher(a, b);
+fin
+
+algoithme carre
+variables
+	nombre, carre : entier;
+	
+Debut
+	saisir("Saisir un nombre :", nombre);
+	% carre := nombre * nombre; %
+	% nombre := nombre * nombre %
+	afficher(nombre * nombre);
+Fin
+
+algorithme TTC
+
+varaibles 
+	prixHt, quantite, tva, total, totalHt, totalTaxe : entier
+
+debut
+	saisir("Saisir le prix hors taxe : ", prixHt);
+	saisir("Saisir la quantite : ", quantite);
+	saisir("Saisir le taux de TVA (entre 0 et 100) : ", tva);
+	
+	% totalHt := prixHt * quantite; %
+	
+	% total := totalHt + totalHt * tva / 100; %
+	% total := totalHt * (1 + tva / 100); %
+	
+	total := (prixHt + prixHt * tva / 100) * quantite;
+	
+	afficher("Le total de votre achat est de : ", total);
+fin
+
+algorithme 3.6
+variables 
+	age : entier;
+Debut
+	saisir("Saisir l'age : ", age);
+	si(age >= 12) 
+		afficher("cadet");
+	sinon si (age > 9)
+		afficher "minime";
+	sinon si (age > 7)
+		afficher "pupille";
+	sinon si (age > 5)
+		afficher "poussin";
+	sinon  
+		afficher "Hors catégorie";
+		  finsi
+		  finsi
+		  finsi
+	finsi
+	
+Fin
+
+algorithme secondes
+
+variables minutes, heures, secondes : entier
+
+debut
+	saisir("Saisir l'heure ", heures);
+	saisir("Saisir la minute ", minutes);
+	saisir("Saisir la seconde ", secondes);
+	
+	// secondes + 1  => depassement de 59 est possible
+	si (secondes = 59 et minutes = 59 et heures = 23) 
+		alors {
+			secondes := 0;
+			minutes := 0;
+			heures := 0;
+		}
+		sinon si(secondes = 59 et minutes = 59)
+			alors {
+				secondes := 0;
+				minutes := 0;
+				heures := heures + 1;
+			}
+			sinon si (secondes = 59)
+				alors {
+					secondes := 0;
+					minutes := minutes + 1;
+				}
+				sinon
+					secondes := secondes + 1;
+				  finsi
+			  finsi
+	finsi
+	
+	afficher("Dans une segonde il sera : ", heures , minutes, secondes),
+	
+
+fin
+
+algoithme copie
+
+varaibles 
+	copies :entier;
+	prix : réel;
+	
+Debut
+	saisir("nombre de copies : ", copies);
+	
+	si(copies < 11) {
+		prix := 0.1 * copies;
+	} sinon si (copies < 31) {
+				prix := 1 + (copies - 10) * 0.09; 
+			} sinon {
+					prix := 1 + (20 * 0.09) + (copies - 30) * 0.08;
+				}
+			finsi
+	finsi
+	afficher(prix);
+Fin
+
+
+algorithme impots
+
+varaibles
+	age : entier;
+	sexe : chaine de caractères;
+	estFemmeImposable, estHommeImposable : booléen;
+	
+Debut 
+	saisir(age, sexe);
+	estFemmeImposable := sexe = "F" et age > 18 et age < 35;
+	estHommeImposable := sexe = "H" et age > 20;
+	
+	si(estFemmeImposable ou estHommeImposable) {
+		afficher("Imposable");
+	} sinon {
+		afficher("Non imposable");
+		}
+	finsi
+Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
