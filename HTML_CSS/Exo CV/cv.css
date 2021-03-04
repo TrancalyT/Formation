@@ -1,0 +1,241 @@
+/* Style général */
+*{
+    font-family: Avenir, sans-serif;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+body{
+  display : flex;
+}
+
+p{
+  margin : 1px;
+}
+
+.title{
+  border-bottom : 2px solid white;
+  padding-bottom : 17px;
+  margin-top : 70px;
+}
+
+#boite{
+  display : flex;
+}
+
+/*Partie GAUCHE */
+
+#gauche{
+  background-color: rgb(67, 75, 83);
+  display : flex;
+  flex-direction: column;
+  width : 30%;
+  color : white;
+  padding-top: 50px;
+}
+
+.photo img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display : flex;
+}
+
+.photo{
+  margin-left: auto;
+  margin-right: auto;
+  width : 15em;
+  display : flex;
+}
+
+.contact img{
+  width: 10%;
+  height: 10%;
+}
+
+.contact{
+  padding-left: 30px;
+  margin-top : 70px;
+}
+
+.iconetexte {
+  display : flex;
+  margin-bottom: 15px;
+}
+
+.icone {
+  display : flex;
+  flex-direction : row;
+  width : 10%;
+  margin-right : 15px;
+}
+
+.icone img{
+  width: 40px;
+  height: 40px;
+}
+
+.texte {
+  display : flex;
+  flex-direction : column;
+  padding-left : 5px;
+  width : 90%;
+}
+
+.proskills{
+  padding-left: 30px;
+}
+
+.titleskills{
+  padding-right : 30%;
+  margin-bottom : 20px;
+}
+
+.skillname{
+  margin-bottom: 10px;
+  padding-top : 10px;
+}
+
+.followme{
+  padding-left: 30px;
+}
+
+.reseau {
+  margin-bottom: 20px ;
+}
+
+.reseaugras{
+  font-weight: bold;
+}
+
+/* Barre de skills */
+.barskills {
+  width: 100%;
+  display : flex;
+  background-color:grey;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.batteur {width: 85%; background-color: white;}
+.decoupage {width: 85%; background-color: white;}
+.cuisson {width: 85%; background-color: white;}
+.recette {width: 85%; background-color: white;}
+.chocolat {width: 85%; background-color: white;}
+
+/*Partie DROITE */
+
+#droite{
+  display : flex;
+  justify-content: center;
+  flex-direction: column;
+  width : 70%;
+  padding-top: 50px;
+  padding-left : 50px;
+  padding-right : 40px;
+  padding-bottom: 40px;
+}
+
+.title2{
+  font-size : 20px;
+}
+
+#titre{
+  padding-bottom : 60px;
+}
+
+.nom {
+  font-size: 60px;
+  margin-bottom : 5px;
+}
+
+.metier{
+  font-size : 30px;
+}
+
+.iconemetier {
+  display : flex;
+  margin-top: 50px;
+  border-bottom: 1px solid black;
+  padding-bottom : 5px;
+}
+
+.iconeM {
+  width: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.metier{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.iconeM img{
+  width: 50px;
+  height: 50px;
+  display : flex;
+}
+
+.blocexp{
+  display : flex;
+  flex-direction : row;
+  margin-top: 40px;
+}
+
+.dateinfo{
+  display : flex;
+  flex-direction : column;
+  width : 30%;
+}
+
+.titreinfo{
+  display : flex;
+  flex-direction : column;
+  width : 70%;
+}
+
+.dategras{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.titregras{
+  font-weight: bold;
+}
+
+.titresize{
+  margin-bottom : 5px;
+  font-size: 22px;
+}
+
+.ref{
+  display : flex;
+  flex-direction : row;
+  margin-top: 40px;
+}
+
+.intoref{
+  display : flex;
+  flex-direction : column;
+  width : 50%;
+}
+
+.nomref{
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width : 980px){
+  #boite{
+    flex-wrap :wrap;
+  }
+}
