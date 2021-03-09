@@ -1,0 +1,11 @@
+header {
+    background-color: grey;
+}
+
+.moi{
+    margin-top: 25px;
+}
+.photo {
+    border-radius : 50%;
+    width : 30%
+}
