@@ -135,3 +135,26 @@
     } 
 
 ?>
+
+<!-- EXO 5.10 -->
+
+<?php
+
+    $n = readline ("Entrez le nombre de chevaux partants : ");
+    $p = readline ("Entrez le nombre de chevaux joués : ");
+    $x = 1;
+    $np = $n - $p;
+    $factorielleP = 1;
+
+    for ($i = 1; $i <= $p; $i++){
+       
+        $x = $x * ($np + $i);
+        $factorielleP = $factorielleP * $i;
+    }
+
+    $y = $x / $factorielleP;
+
+    echo("Dans l'ordre une chance sur " .$x. " de gagner.");
+    echo("Dans le désordre une chance sur " .$y. " de gagner.");
+
+?>
