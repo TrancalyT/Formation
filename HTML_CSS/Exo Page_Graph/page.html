@@ -1,59 +1,201 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset ="utf-8"/>
-        <title>Exo PAGE</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link rel="stylesheet" href="page.css"/>
-    </head>
+<head>
+    <title>Page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+    
+</head>
     <body>
-        <header id="nameandsearch">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg">
-                        <nav class="navbar navbar-light bg-light">
-                            <div class="container-fluid">
-                              <a class="navbar-brand">Cool Site</a>
-                              <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                              </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                    <img src="logo.png" alt="Logo" style="width:10vh;">
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse justify-content-around form-row" id="navbarTogglerDemo03">
+            <form class="d-flex col-9">
+              <span class="input-group-text" id="basic-addon1">Search</span>
+              <input type="text" class="form-control" placeholder="Recherchez ici per favor ...">
+            </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><img src="logomail.png" alt="logo" class="logo"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="logohome.jpg" alt="logo" class="logo"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><img src="logotel.jpg" alt="logo" class="logo"></a>
+              </li>
+            </ul>
+          </div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <img src="photo.png" alt="Photo" style="width:10vh;">
+            </li>
+            <li class="nav-item active">
+              <a class="navbar-brand ml-1">John Doe</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+      <div class="container-fluid h-100">
+        <div class="row h-100">
+          <main class="col">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row justify-content-between mt-5 ml-1 mr-1 " class="overview">
+                        <h2>Overview</h2>
+                        <button class="btn btn-primary" type="submit">+ ADD ITEM</button>
+                    </div>
+                    <div class="row">
+                        <section class="col-md-3 text-light">
+                            <div class="graph1">
+                                    <h3><span class="fas fa-user mr-1"></span>10368</h3>
+                                    <p>Beau graph n'est-ce pas ? Observez bien.</p>
+                                    <img class=img-responsive src="graph01.jpg" alt="graph01">
+                           </div>
+                        </section>
+                        <section class="col-md-3 text-light ">
+                            <div class="graph2">
+                                <h3><span class="fas fa-shopping-cart mr-1"></span>388.688</h3>
+                                <p>Oui je sais il est très agréable. Les yeux se régalent.</p>
+                                <img class=img-responsive src="graph01.jpg" alt="graph01">
                             </div>
-                          </nav>
+                        </section>
+                        <section class="col-md-3 text-light ">
+                            <div class="graph3">
+                                <h3><span class="fas fa-calendar-alt mr-1"></span>1.086</h3>
+                                <p>Cherchez donc les 4 différences dans celui-ci.</p>
+                                <img class=img-responsive src="graph01.jpg" alt="graph01">
+                            </div>
+                        </section>
+                        <section class="col-md-3 text-light ">
+                            <div class="graph4">
+                                <h3><span class="fas fa-dollar-sign mr-1"></span>1.060.386</h3>
+                                <p>Hélas ici le jeu ne fonctionne pas :(</p>
+                                <img class=img-responsive src="graph01.jpg" alt="graph01">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-md-6  ">
+                            <div class="graphmid">
+                                <h2>Recents reports</h2>
+                                <p>Je pense très sincèrement que celui-ci est le plus sympa de tous, il est plus grand !</p>
+                                <img class=img-responsive src="graph01.jpg" alt="graph01">
+                            </div>
+                        </section>
+                        <section class="col-md-6  ">
+                            <div class="graphmid">
+                                <h2>Char by %</h2>
+                                <p>Celui-ci également quoique, il mériterait de ne pas avoir ce damier autour de lui.</p>
+                                <img class=img-responsive src="graph01.jpg" alt="graph01">
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row">
+                        <section class="col-lg-8">
+                            <div class="graph">
+                              <h2>Earning by items</h2>
+                                <table class="table table-striped table-bordered table-hover table-sm bord">
+                                    <thead class="thead-dark bord">
+                                      <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Order ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Total</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">06/06/2666 06 : 06</th>
+                                        <td>Un chiffre</td>
+                                        <td>Produit utile</td>
+                                        <td>THUNE</td>
+                                        <td>1</td>
+                                        <td>THUNE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">06/06/2666 06 : 06</th>
+                                        <td>Un chiffre</td>
+                                        <td>Produit utile</td>
+                                        <td>THUNE</td>
+                                        <td>1</td>
+                                        <td>THUNE</td>
+                                      </tr>
+                                    
+                                      <tr>
+                                        <th scope="row">06/06/2666 06 : 06</th>
+                                        <td>Un chiffre</td>
+                                        <td>Produit utile</td>
+                                        <td>THUNE</td>
+                                        <td>1</td>
+                                        <td>THUNE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">06/06/2666 06 : 06</th>
+                                        <td>Un chiffre</td>
+                                        <td>Produit utile</td>
+                                        <td>THUNE</td>
+                                        <td>1</td>
+                                        <td>THUNE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">06/06/2666 06 : 06</th>
+                                        <td>Un chiffre</td>
+                                        <td>Produit utile</td>
+                                        <td>THUNE</td>
+                                        <td>1</td>
+                                        <td>THUNE</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </section>
+                        <section class="col-md-4">
+                            <div class="table2 ">
+                              <h2>Top Countries</h2>
+                                <table class="table table-borderless bg-primary bord text-light">  
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">France</th>
+                                        <td>C LA CRISE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">USA</th>
+                                        <td>C LA CRISE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Europe</th>
+                                        <td>C LA CRISE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Partout en fait</th>
+                                        <td>C LA CRISE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Qatar</th>
+                                        <td>C PA LA CRISE</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">Chez Sarko</th>
+                                        <td>C PA LA CRISE NON PLUS</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                             </div>
+                        </section>
                     </div>
                 </div>
-                
-            </div>
-        </header>
-        <section id="leftmenu">
-            
-        </section>
-        <section id="overview">
-            
-        </section>
-        <section id="buttonadd">
-            
-        </section>
-        <section id="4graph">
-            
-        </section>
-        <section id="graph1">
-            
-        </section>
-        <section id="graph2">
-            
-        </section>
-        <section id="titleearn">
-            
-        </section>
-        <section id="topcountries">
-            
-        </section>
-        <section id="tableau">
-            
-        </section>
-        <section id="country">
-            
-        </section>
+             </div>
+          </main>
+        </div>
+      </div>  
     </body>
 </html>

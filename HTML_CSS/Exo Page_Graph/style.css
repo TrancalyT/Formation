@@ -1,0 +1,71 @@
+body {
+  font-family: "Futura", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+section {
+  padding: 10px 0px 20px 0;
+}
+
+.photo {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}
+
+.graph1 {
+  background: #953ad1;
+  margin: 0rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.graph2 {
+  background:#4fe0c1;
+  margin: 0rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.graph3 {
+  background: #e44b30;
+  margin: 0rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.graph4 {
+  background: #b5e45d;
+  margin: 0rem;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.graphmid {
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgb(241, 240, 240);
+}
