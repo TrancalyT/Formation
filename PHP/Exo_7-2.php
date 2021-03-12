@@ -50,3 +50,7 @@ function triParBulle ($array){
 
 print_r(triParInsertion($array));
 print_r(triParBulle($array));
+
+// Fonction triParBulle ne marche pas, elle ne resitute pas toutes les valeurs du tableau
+
+?>
