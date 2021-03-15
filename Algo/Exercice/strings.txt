@@ -82,10 +82,219 @@ fonction chiffrer(message: string) : string{
 }
 
 Begin
-
-
-	
+	prompt(message);
+	display(chiffrer(message));
 End
+
+
+algorithme 9.7
+variables
+	message : string,
+	decalage : integer;
+constantes
+		ALPHABET := "abcdefghijklmnopqrstuvwxyz";
+		
+fonction indexOF(lettre : char) :integer{
+	variables i : integer;
+	
+	for(i:=0, i < ALPHABET.length, i++){
+		if(lettre = ALPHABET(i)){
+			return i;
+		}
+	}
+	return -1;
+}
+fonction chiffrer(message: string, decalage : integer) : string{
+	
+		i, index : integer;
+	for(i:=0, i < message.length, i++){
+		index := indexOF(message(i));
+		indexApresDecalage := index + decalage;
+		
+		message(i) := ALPHABET(indexApresDecalage % alphabet.length());
+	}
+	return message;
+}
+
+Begin
+	prompt(message);
+	prompt(decalage);
+	display(chiffrer(message, decalage));
+End
+
+algorithme 9.8
+variables
+	message : string;
+
+Constantes 
+	ALPHABET := "abcdefghijklmnopqrstuvwxyz";
+	ALPHABET_KEY := "fghvwxlmnabcdeopqyzrstuijk";
+	
+fonction indexOF(lettre : char) :integer{
+	variables i : integer;
+	
+	for(i:=0, i < ALPHABET.length, i++){
+		if(lettre = ALPHABET(i)){
+			return i;
+		}
+	}
+	return -1;
+}
+
+function cypher(message: string) : string {
+	variables 
+		i, index : integer;
+		
+	for(i:=0; i < message.length(); i++){
+		index := indexOf(message(i));
+		message(i) := ALPHABET_KEY(index);
+	}
+	return message;
+}
+Begin
+	prompt(message);
+	display(cypher(message);
+End
+
+
+
+
+
+
+
+
+
+Algorithme vigenere
+variables
+	message : string,
+	cle : string;
+constantes 
+	ALPHABET := "abcdefghijklmnopqrstuvwxyz";
+fonction indexOF(lettre : char) :integer{
+	variables i : integer;
+	
+	for(i:=0, i < ALPHABET.length, i++){
+		if(lettre = ALPHABET(i)){
+			return i;
+		}
+	}
+	return -1;
+}
+
+function encrypt(msg : string): string {
+	variables
+		i, j, indexFinal, indexLettreMessage, indexLettreCle : integer;
+		
+	cle := "VIGENERE";
+	 % j := 0; %
+	for(i:=0, i< msg.length(), i++){
+		 % if(j = cle.length()){
+			  j := 0;
+		   }  %
+		indexLettreMessage := indexOF(msg(i));
+		indexLettreCle := indexOF(cle(i % cle.length()));
+		indexFinal := (indexLettreMessage + indexLettreCle) % 26
+		msg(i) := ALPHABET(indexFinal);
+		 % j++; %
+	}
+	
+	return msg;
+}
+
+Begin
+	prompt(message);
+	display(encrypt(message));
+End
+
+
+
+/...
+
+
+... /
+
+alea := random(); /* 0 .. 1 */
+
+1 -  0 >=glup < 2
+		  glup := 2 * alea + 0; //  => minGlup := 0 | maxGlup :~ 2
+
+2-   -1 <= Glup < 1 
+		  glup := 2 * alea;  //  => minGlup := 0  | maxGlup :~ 2
+		  glup := 2 * alea -1; // => minGlup := -1  | maxGlup :~ 1
+
+3-   1.35 <= glup < 1.65
+		  glup := 0.3 * alea  //  => minGlup := 0  | maxGlup :~ 0.3
+		  glup := 0.3 * alea + 1.35 //  => minGlup := 1.35  | maxGlup :~ 1.65
+
+4-   1 <= glup <=6
+		  glup := trunc(6 * alea) + 1  // =>   minGlup := 1  | maxGlup := 6
+
+5-   -10.5 <= glup < 6.5   
+		  glup := 17 * alea - 10.5;   //  => minGlup := -10.5  | maxGlup :~ 6.5
+
+6-   2 <= glup <= 12	
+		  alea1 := random(); /* 0 .. 1 */
+		  alea2 := random(); /* 0 .. 1 */
+		  glup := (trunc(6 * alea1) + 1) + (trunc(6 * alea2) + 1)         
+
+
+
+
+
+// Brouillon Exo 9.10
+
+alea : real; 
+alea := random(); // alea sera entre 0 et  1 (1 non inclu)
+glup := alea * 2;
+0<=glup<2 => 
+
+// Fin brouillon
+
+IL FAUT CODER CETTE PHRASE  CLE : VIGENERE
+VI GENE REVIG ENERE VIGENE  
+
+I 
+-1 : indice de I dans l'alphabet (8)
+-2 : recuperer l'indice de V das l'alphabet (21)  => 21
+-3 : chiffrer I en la remplacant par la lettre à la position 9 de l'alphabet décalé de 21 
+	(commence par V) => ALPHABET((8 + 21) % 26) => ALPHABET(3) = D
+
+L
+-1 : index = 11
+-2 : I => 8 => decalage de 8
+-3 : L => ALPHABET((11 + 8) % 26) => ALPHABET(19) => T
+
+// Regle du decalage:
+(index + decalage)  % 26 
+
+
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
 
 
 
