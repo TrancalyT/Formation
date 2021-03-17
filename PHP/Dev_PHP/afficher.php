@@ -24,18 +24,6 @@
             }
             $j++;
         }
-        // for ($i = 0; $i < 4; $i++){
-        //     if ($i == 0){
-        //         $nom = $tabLigne[$i];
-        //     } else if ($i == 1){
-        //         $prenom = $tabLigne[$i];
-        //     } else if ($i == 2){
-        //         $mail = $tabLigne[$i];
-        //     } else if ($i == 3){
-        //         $telephone = $tabLigne[$i];
-        //     }
-        // }
-
     }
     
     fclose($agenda);

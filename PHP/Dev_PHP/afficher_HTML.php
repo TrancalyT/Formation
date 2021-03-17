@@ -6,7 +6,9 @@
     <title>Affichage tableaux</title>
 </head>
 <body>
-    <table class="table table-dark table-hover">
+    <h1 class="row justify-content-center"> AGENDA </h1>
+    <div class="container-lg">
+    <table class="table table-info table-hover">
         <thead>
             <tr>
                 <th scope="col">NOM</th>
@@ -43,8 +45,11 @@
                 </tr>";  
         }
         fclose($agenda) ?>
-        </tbody>
+        </tbody>   
     </table>
+    </div> 
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-info" type="button"> <a href="http://127.0.0.1/formulaire_HTML.php">Ajouter un nouveau contact</a></button>
+    </div>
 </body>
 </html>
-
