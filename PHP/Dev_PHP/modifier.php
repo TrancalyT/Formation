@@ -1,24 +1,23 @@
 <?php
 
-$agenda = fopen("AGENDA.txt", "r") or die ("Impossible d'ouvrir le fichier AGENDA");
- 
-// $counter = 0;
+    $selectedUser = [];
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
 
-while(!feof($agenda)){
+        $agenda = fopen("AGENDA.txt", "r") or die ("Impossible d'ouvrir le fichier AGENDA");
 
-//     for ($i = $counter; $i < $counter + 1; $i++){
-//         $j = 0;
-//         $ligne[$j] = fgets($agenda);
-//         $j++;
-//     }
-//     $counter = $counter + 1;
-// }
-    $i = 0;
-    $i++;
-    $$i = fgets($agenda);
-    echo($$i);
-}
+        while (!feof($agenda)){
+    
+            $ligne = fgets($agenda);
+            $tabLigne = explode(";", $ligne);
 
-fclose($agenda);
+            if ($id == $tabLigne[0]){
+                $selectedUser = $tabLigne;
+                break;
+            }
+        }
+
+        fclose($agenda);
+    }
 
 ?>

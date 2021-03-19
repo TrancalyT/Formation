@@ -24,10 +24,11 @@
             </div>
             <div class="mb-3">
                 <label for="Téléphone" class="form-label">Téléphone : </label>
-                <input id="Téléphone" size="50" maxlength="13" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" required>
+                <input id="Téléphone" size="50" maxlength="10" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" required>
             </div>
-                <button type="submit" class="btn btn-primary">Envoyer</button>  
-        </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+                <button class="btn btn-outline-secondary text-muted" type="button"> <a href="http://127.0.0.1/afficher_HTML.php">Retour à l'agenda</a></button>  
+            </div>
     </form>
 </body>
 </html>

@@ -5,7 +5,29 @@
     $testFileSize = "AGENDA.txt";
     $size = filesize($testFileSize);
 
-    // $nom = readline ("Veuillez entrer votre NOM (en MAJ) : ");
+    $number = $_POST['telephone'];
+    $telClear = sprintf("%s.%s.%s.%s.%s",
+            substr($number, 0, 2),
+            substr($number, 2, 2),
+            substr($number, 4, 2),
+            substr($number, 6, 2),
+            substr($number, 8, 2));
+
+    $contenuFichier = file_get_contents("AGENDA.txt");
+    $nbrLigne = substr_count($contenuFichier, "\n");
+    $id = $nbrLigne + 2;
+
+    if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['telephone']) && $size == 0){
+        fwrite($agenda, $id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear);
+    } else if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['telephone'])) {
+        fwrite($agenda, "\n" .$id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear);
+    }
+    
+    fclose($agenda);
+
+    header("Location: http://127.0.0.1/afficher_HTML.php");
+
+        // $nom = readline ("Veuillez entrer votre NOM (en MAJ) : ");
     // $prenom = readline ("Veuillez entrer votre Prénom : ");
     // $mail = readline ("Veuillez saisir votre adresse E-Mail : ");
     // $telephone = readline ("Veuillez entrer votre numéro de téléphone (tel que 00.00.00.00.00) : ");
@@ -15,26 +37,4 @@
     // } else {
     //     fwrite($agenda, "\n" .strtoupper($nom). ";" .ucwords($prenom). ";" .$mail. ";" .$telephone);
     // }
-
-    if ($size == 0){
-        fwrite($agenda, strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$_POST['telephone']);
-    } else {
-        fwrite($agenda, "\n" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$_POST['telephone']);
-    }
-    
-    fclose($agenda);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv='refresh' content='0; url=http://127.0.0.1/afficher_HTML.php'>
-    <title>Redirection</title>
-</head>
-<body>
-    
-</body>
-</html>
