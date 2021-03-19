@@ -27,7 +27,7 @@
                 <input id="Téléphone" size="50" maxlength="10" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" required>
             </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
-                <button class="btn btn-outline-secondary text-muted" type="button"> <a href="http://127.0.0.1/afficher_HTML.php">Retour à l'agenda</a></button>  
+                <a href="http://127.0.0.1/afficher_HTML.php"><button class="btn btn-outline-secondary" type="button">Retour à l'agenda</button></a>  
             </div>
     </form>
 </body>

@@ -34,7 +34,7 @@
     <h1 class="row justify-content-center"> Modifier vos informations </h1>
     <form action="ajouter_modif.php" method="post" class="col g-3 justify-content form-info">
         <div class="container-lg">
-                <input type=hidden id="ID" name="id" value="<?php echo$selectedUser[0]?>">
+                <input type=hidden id="ID" name="id" value="<?php echo$selectedUser[0]?>" readonly>
             <div class="mb-3">
                 <label for="Nom" class="form-label">Nom : </label>
                 <input id="Nom" size="50" maxlength="100" type="text" placeholder="Entrez votre nom ici" name="nom" class="form-control" value="<?php echo$selectedUser[1]?>" required>
@@ -49,10 +49,11 @@
             </div>
             <div class="mb-3">
                 <label for="Téléphone" class="form-label">Téléphone : </label>
-                <input id="Téléphone" size="50" maxlength="14" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" value="<?php echo$selectedUser[4]?>" required>
+                <input id="Téléphone" size="50" maxlength="10" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" value="<?php echo$selectedUser[4]?>" required>
             </div>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
-                <button class="btn btn-outline-secondary text-muted" type="button"> <a href="http://127.0.0.1/afficher_HTML.php">Retour à l'agenda</a></button>
+                <a href="http://127.0.0.1/afficher_HTML.php"><button class="btn btn-outline-secondary" type="button">Retour à l'agenda</button></a>
         </div>
     </form>
 </body>
+</html>

@@ -1,9 +1,0 @@
-1;COCTEAU;Jean;jeancocteau@gmail.com;06.66.66.66.45
-2;BLAIREAU;Bérengère;blaireau_ber@outlook.fr;06.45.45.43.41
-3;REINA;Anthony;yapademail@gmail.com;06.06.06.06.01
-4;CAMILLE;Casteur;camillecasteur@me.com;06.06.23.42.42
-5;MOI;Bertrand;bertrandleroi@gmail.com;06.64.51.03.48
-6;PROUT;Mozart;momodu62@quedal.fr;04.04.04.04.04
-7;REINA;Anthony;anthorosie@gmail.com;06.64.51.03.47
-8;REINA;Popof;lefeu@gmail.com;03.02.01.46.56
-9;REINA KASTAK;Bogoss;massimo123y@gmail.com;06.34.11.14.33
