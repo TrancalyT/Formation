@@ -1,0 +1,17 @@
+I :
+
+Client 0,n -> Commander / quantité <- 0,n Produit = Non hiérarchique
+Salarié 1,1 -> Etre affecté <- 1,n Service = Hiérarchique
+Personne 0,n -> Posséder <- 1,1 Voiture = Hiérarchique
+Ville 0,1 -> Capitale de <- 1,1 Pays = Hiérarchique
+
+ - question 1 : 
+
+Département 1,n -> Rattacher <- 1,1 Voyageur
+Voyage 1,1 -> Entreprendre <- 1,n Voyageur
+Cat Hôtel 1,n -> Héberger <- 1,1 Voyageur
+Classe Voyage 1,n -> Autoriser <- 1,1 Voyageur
+
+ - question 2 :
+
+VOIR GRAPH
