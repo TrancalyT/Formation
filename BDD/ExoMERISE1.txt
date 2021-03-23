@@ -14,4 +14,53 @@ Classe Voyage 1,n -> Autoriser <- 1,1 Voyageur
 
  - question 2 :
 
-VOIR GRAPH
+VOIR GRAPH CORRIGE "container_THOLID"
+
+II :
+
+MCD Magasin :
+
+Table Fournisseur (|CodeF, NomF)
+Table Type Article (|CodeT, NomT, #CodeF)
+Table Article (|CodeA, NomA, Prix, #CodeT)
+Table Contenu Ticket (|#CodaA, |#NumT)
+Table Caisse (|NumT, Date, Heure, Total)
+
+MCD Ecole :
+
+Table Enfant (|NuméroSS, NomENF, Prénom, #CodePostal, #CodeEcole)
+Table Commune (|CodePostal, NomC)
+Table Ecole (|CodeEcole, NomEC, #CodePostal)
+
+MCD Representant :
+
+Table Type Produit (|CodeP, NomP)
+Table Representant (|Matricule, NomR, Prénom, #CodeP, #ReponsableDeP)
+Table Note de Frais (|NumN, Total, #Matricule)
+Table Contenu Note (|#NumN, |#NumF)
+Table Frais (|NumF, TypeF, Montant)
+
+MCD BDVol Amélioré :
+
+Table Avion (|NuméroA, Constructeur, Modèle, #NomC)
+Table Compagnie (|NomC)
+Table Personnel (|NomPE, Fonction, #NomC)
+Table Affectation personnel (|#NomPe, |#NuméroV)
+Table Reservation (|#NuméroV, |#NomPA)
+Table Passager (|NomPa)
+Table Vol (|NuméroV, Jour, HeureDépart, HeureArrivée,
+	    PlacesLibres, #NuméroA, #NomADépart, #NomAArrivée)
+Table Aéroport (|NomA, #NomV)
+Table Ville (|NomV)
+
+
+Cas Ahola :
+
+Écrire le schéma relationnel correspondant aux entités et aux associations 
+suivantes : VOYAGEUR,BENEFICIER, TYPE CARTE, PROPOSER, COMPAGNIE.
+
+Table Voyageur (|NumPers, Nom, Prenom, DateNaissance, PermisB, NumPermis
+		#NumDept, #TypeHotel, #ClasseVoyage)
+Table Beneficiaire (|#NumPers, |#NumTypeCarte, NumCarte, DateFin)
+Table Type Carte (|NumTypeCarte, NomCarte, #CodeCie)
+Table Compagnie (|CodeCie, NomCie)
