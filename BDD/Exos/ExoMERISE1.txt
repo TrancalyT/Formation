@@ -64,3 +64,12 @@ Table Voyageur (|NumPers, Nom, Prenom, DateNaissance, PermisB, NumPermis
 Table Beneficiaire (|#NumPers, |#NumTypeCarte, NumCarte, DateFin)
 Table Type Carte (|NumTypeCarte, NomCarte, #CodeCie)
 Table Compagnie (|CodeCie, NomCie)
+
+Cas Mairie :
+
+Table Secteur (|CodeSecteur, NomResponsable, TelResponsable)
+Table Restaurant (|NoRestaurant, NomRestaurant, AdresseRestaurant, TelRestaurant
+		   #CodeSecteur, #MatAgent)
+Table Agent-R (|MatAgent, NomAgent, AdresseAgent, TelAgent, #NoRestaurant)
+Table Ecole (|CodeEcole, NomEcole, AdresseEcole, TelEcole, #NoRestaurant)
+
