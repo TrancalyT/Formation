@@ -1,0 +1,21 @@
+Exo 1 :
+
+Disques(|code_disque, titre, année, #code_label, #code_artiste)
+Labels(|code_label, nom_label)
+Artistes(|code_artiste, nom_artiste)
+
+Exo 1.2 :
+
+Disques(code_disque, titre, année, #code_label)
+Labels(code_label, nom_label)
+Artistes(code_artiste, nom_artiste)
+y_participe(|#code_artiste, |#code_disque)
+
+Exo 2 :
+
+Buveur(|id_buveur, nom_buveur)
+aimer(|#id_buveur, |#id_biere)
+Biere(|id_biere, nom_biere)
+servir(|#id_biere, |#id_bar)
+Bar(|id_bar, nom_bar)
+frequenter(|#id_buveur, |#id_bar)
