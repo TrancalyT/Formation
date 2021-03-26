@@ -18,23 +18,13 @@
     $id = $nbrLigne + 2;
 
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['telephone']) && $size == 0){
-        fwrite($agenda, $id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear);
+        fwrite($agenda, $id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear. ";");
     } else if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['telephone'])) {
-        fwrite($agenda, "\n" .$id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear);
+        fwrite($agenda, "\n" .$id. ";" .strtoupper($_POST['nom']). ";" .ucwords($_POST['prenom']). ";" .$_POST['mail']. ";" .$telClear. ";");
     }
     
     fclose($agenda);
 
     header("Location: http://127.0.0.1/afficher_HTML.php");
 
-        // $nom = readline ("Veuillez entrer votre NOM (en MAJ) : ");
-    // $prenom = readline ("Veuillez entrer votre Prénom : ");
-    // $mail = readline ("Veuillez saisir votre adresse E-Mail : ");
-    // $telephone = readline ("Veuillez entrer votre numéro de téléphone (tel que 00.00.00.00.00) : ");
-
-    // if ($size == 0){
-    //     fwrite($agenda, strtoupper($nom). ";" .ucwords($prenom). ";" .$mail. ";" .$telephone);
-    // } else {
-    //     fwrite($agenda, "\n" .strtoupper($nom). ";" .ucwords($prenom). ";" .$mail. ";" .$telephone);
-    // }
 ?>

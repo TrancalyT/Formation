@@ -26,6 +26,7 @@
                 <label for="Téléphone" class="form-label">Téléphone : </label>
                 <input id="Téléphone" size="50" maxlength="10" type="tel" placeholder="Entrez votre numéro de téléphone ici" name="telephone" class="form-control" required>
             </div>
+                <p class="small text-danger"><em>(*) Veuillez ne saisir que la pure et stricte verité</em></p>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
                 <a href="http://127.0.0.1/afficher_HTML.php"><button class="btn btn-outline-secondary" type="button">Retour à l'agenda</button></a>  
             </div>

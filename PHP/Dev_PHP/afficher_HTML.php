@@ -62,10 +62,5 @@
         </div>
     </div>
 
-    <div class="container-md">
-        <p>A faire :</p>
-        <p>- Ecrire la fonctionnalité Supprimer et replacer l'ID dans l'ordre</p>
-        <p>- Formater numéro de tel lors de la modif</p>
-    </div>
 </body>
 </html>
