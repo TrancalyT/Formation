@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "PHP_BDD",
+			"path": "PHP\\PHP_BDD"
+		},
+		{
+			"name": "Regex",
+			"path": "PHP\\Regex"
+		},
+		{
+			"name": "Fil_Rouge",
+			"path": "..\\Fil_Rouge"
+		}
+	],
+	"settings": {}
+}
