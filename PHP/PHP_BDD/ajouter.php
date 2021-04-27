@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $messageErrNom = "";
 $messageErrPrenom = "";
@@ -70,6 +71,10 @@ if (isset($valider)){
     <title>Ajout</title>
 </head>
 <body>
+
+<?php
+    if (isset($_SESSION['user_profil']) && $_SESSION['user_profil'] == "ADMIN") {
+?>
     <h1 class="row justify-content-center text-secondary shadow-lg p-3 mb-5 bg-body rounded"> Ajouter un employé </h1>
     <form action="ajouter.php" method="post" class="col g-3 justify-content form-info">
         <div class="container-lg">
@@ -139,5 +144,12 @@ if (isset($valider)){
                 <a href="http://127.0.0.1/tableau.php"><button class="btn btn-outline-secondary" type="button">Retour à l'agenda</button></a>
         </div>
     </form>
+<?php
+    } else {
+        header("Location:http://127.0.0.1/tableau.php?connexionRequired=true");
+    }
+?>
+
+
 </body>
 </html>

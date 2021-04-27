@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
 if(isset($_REQUEST['noemp'])){
 
@@ -14,6 +15,7 @@ if(isset($_REQUEST['noemp'])){
 
 
     $result = mysqli_query($mysqli, $query);
+   
 
     while ($row = mysqli_fetch_row($result)) {
 
@@ -44,8 +46,7 @@ if(isset($_REQUEST['noemp'])){
 
     mysqli_close($mysqli);
 
-    // header("Location: http://127.0.0.1/tableau.php/#staticBackdrop?dnoemp=$dnoemp&dnom=$dnom&dprenom=$dprenom&demploi=$demploi&dsup=$dsup&demb=$demb&dsal=$dsal&dcom=$dcom&dnoserv=$dnoserv&dserv=$dserv&dville=$dville&dnoproj=$dnoproj&dnomproj=$dnomproj&dbudget=$dbudget");
-
+    // header("Location: http://127.0.0.1/tableau.php/#staticBackdrop?dnoemp=$dnoemp&dnom=$dnom&dprenom=$dprenom&demploi=$demploi&dsup=$dsup&demb=$demb&dsal=$dsal&dcom=$dcom&dnoserv=$dnoserv&dserv=$dserv&dville=$dville&dnoproj=$dnoproj&dnomproj=$dnomproj&dbudget=$dbudget"); 
 }
 ?>
 
@@ -57,10 +58,15 @@ if(isset($_REQUEST['noemp'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <title>Détail employé</title>
 </head>
 <body>
+
+<?php
+    if (isset($_SESSION['user_profil']) && $_SESSION['user_profil'] == "ADMIN" || $_SESSION['user_profil'] == "SIMPLE USER" ) {
+?>
+
 <h1 class="row justify-content-center text-secondary shadow-lg p-3 mb-5 bg-body rounded"><?php echo"$dnom $dprenom" ?></h1>
 <div class="row justify-content-center">
     <div class="col-sm-3">
@@ -128,7 +134,11 @@ if(isset($_REQUEST['noemp'])){
     
 </div>
 
-
+<?php
+    } else {
+        header("Location:http://127.0.0.1/tableau.php?connexionRequired=true");
+    }
+?>
 
 </body>
 </html>

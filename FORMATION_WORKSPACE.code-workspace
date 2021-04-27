@@ -11,6 +11,9 @@
 		{
 			"name": "Fil_Rouge",
 			"path": "..\\Fil_Rouge"
+		},
+		{
+			"path": "PHP\\PHP_POO"
 		}
 	],
 	"settings": {}

@@ -1,0 +1,22 @@
+Lorsqu'on spécifie le type à retourner 
+(exemple : public function getNom() : string { })
+On peut lui indiquer qu'on accepte les NULL avec cette syntaxe "?"
+(exemple : public function getNom() : ?string { })
+
+Si on veut faire un echo $monObjet, PHP ne peut pas convertir un objet
+en string. Si on veut affiché l'objet, on peut créer une fonction
+__toString dans la classe de l'objet.
+(exemple : public function __toString (){
+ 			return : "Nom : " .$this->nom
+	   })
+
+Si on souhaite simplifier l'écriture avec constructeur par défaut,
+on peut ajouter un return $this à nos fonctions "setters", en précisant
+que la fonction retourne une class.
+(exemple : public function setNom ($newNom) : Personne {
+		$this->nom = $newNom;
+		return $this;
+	    }
+
+	   On peut dorénavant écrire :
+	   $personne 1 -> setNom("DUPONT")-> setPrenom("JEAN")-> ...)
