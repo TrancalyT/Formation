@@ -20,3 +20,6 @@ que la fonction retourne une class.
 
 	   On peut dorénavant écrire :
 	   $personne 1 -> setNom("DUPONT")-> setPrenom("JEAN")-> ...)
+
+Si Class abstraite, au moins UNE FONCTION est abstraite 
+(sinon pas d'intêret)
