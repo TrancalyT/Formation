@@ -1,4 +1,5 @@
 <?php
+include 'fonctions.php';
 
 if(isset($_REQUEST['noemp'])){
 
@@ -6,8 +7,7 @@ if(isset($_REQUEST['noemp'])){
 
     $query = "DELETE FROM EMP2 WHERE NOEMP = $noemp;";
 
-    $bdd = mysqli_init();
-    mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
+    $bdd = setConnexionBDD();
     mysqli_query($bdd, $query);
 
     mysqli_close($bdd);

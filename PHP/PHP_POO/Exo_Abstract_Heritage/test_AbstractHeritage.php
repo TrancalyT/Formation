@@ -8,7 +8,7 @@ $ouvrier1 = new Ouvrier ("Ouvrier", "DURANT", "Paul", "1995-12-17", new DateTime
 $ouvrier2 = new Ouvrier ("Ouvrier", "JOUBERT", "Frederico", "1992-04-25", new DateTime("1994-04-12"));
 $cadre1 = new Cadre ("Cadre", "PERSEVAL", "Mozart", "2000-12-17", 4);
 $cadre2 = new Cadre ("Cadre", "DUFLOUZ", "Bertrand", "2004-01-01", 3);
-$patron1 = new Patron ("Patron", "MICHEL", "Leboss", "1970-12-10", 25);
+$patron1 = new Patron ("Patron", "MICHEL", "Leboss", "1970-12-10", 50);
 
 echo$ouvrier1;
 echo"\n ----------------- \n";

@@ -1,50 +1,46 @@
 <?php
     session_start();
+    include 'fonctions.php';
 
 if(isset($_REQUEST['noemp'])){
 
     $noemp = intval($_REQUEST['noemp']);
 
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $mysqli = mysqli_connect("localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
-
-    $query = "SELECT NOEMP, NOM, PRENOM, EMPLOI, SUP, EMBAUCHE, SAL, COMM, SERV2.*, PROJ.* FROM EMP2 
-    inner join serv2 on emp2.noserv = serv2.noserv 
-    inner join proj on emp2.noproj = proj.noproj 
-    where NOEMP = $noemp;";
-
-
-    $result = mysqli_query($mysqli, $query);
-   
-
-    while ($row = mysqli_fetch_row($result)) {
-
-        $dnoemp = $row[0];
-        $dnom = $row[1];
-        $dprenom = $row[2];
-        $demploi = $row[3];
-        $dsup = $row[4];
-        $demb = $row[5];
-        $dsal = $row[6];
-        $dcom = $row[7];
-        $dnoserv = $row[8];
-        $dserv = $row[9];
-        $dville = $row[10];
-        $dnoproj = $row[11];
-        $dnomproj = $row[12];
-        $dbudget = $row[13];
-
-        if($dcom == NULL){
-            $dcom = 0;
+    foreach(displayDetails($noemp) as $key => $value){
+        if(is_array($value)){
+        foreach($value as $key => $value){
+            if ($key == 'NOEMP'){
+                $dnoemp = $value;
+            } else if ($key == 'NOM'){
+                $dnom = $value;
+            } else if ($key == 'PRENOM'){
+                $dprenom = $value;
+            } else if ($key == 'EMPLOI'){
+                $demploi = $value;
+            } else if ($key == 'SUP'){
+                $dsup = $value;
+            } else if ($key == 'EMBAUCHE'){
+                $demb = $value;
+            } else if ($key == 'SAL'){
+                $dsal = $value;
+            } else if ($key == 'COMM'){
+                $dcom = $value;
+            } else if ($key == 'NOSERV'){
+                $dnoserv = $value;
+            } else if ($key == 'SERVICE'){
+                $dserv = $value;
+            } else if ($key == 'VILLE'){
+                $dville = $value;
+            } else if ($key == 'NOPROJ'){
+                $dnoproj = $value;
+            } else if ($key == 'NOMPROJ'){
+                $dnomproj = $value;
+            } else if ($key == 'BUDGET'){
+                $dbudget = $value;
+            }
         }
-
-        if($dsup == NULL){
-            $dsup = "Pas de supérieur";
         }
-        
     }
-
-    mysqli_close($mysqli);
 
     // header("Location: http://127.0.0.1/tableau.php/#staticBackdrop?dnoemp=$dnoemp&dnom=$dnom&dprenom=$dprenom&demploi=$demploi&dsup=$dsup&demb=$demb&dsal=$dsal&dcom=$dcom&dnoserv=$dnoserv&dserv=$dserv&dville=$dville&dnoproj=$dnoproj&dnomproj=$dnomproj&dbudget=$dbudget"); 
 }

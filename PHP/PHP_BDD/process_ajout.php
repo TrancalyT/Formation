@@ -1,4 +1,5 @@
 <?php
+    include 'fonctions.php';
 
     $nom = strtoupper($_GET['nom']);
     $prenom = strtoupper($_GET['prenom']);
@@ -10,8 +11,7 @@
     $noserv = intval($_GET['noserv']);
     $noproj = intval($_GET['noproj']);
      
-    $bdd = mysqli_init();
-    mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
+    $bdd = setConnexionBDD();
 
     $recupNoemp = "SELECT MAX(NOEMP)+1 FROM EMP2 WHERE NOSERV = $noserv;";
     $result = mysqli_query($bdd, $recupNoemp);

@@ -1,4 +1,5 @@
 <?php
+include 'fonctions.php';
 
 $noemp = intval($_REQUEST['noemp']);
 $nom = strtoupper($_REQUEST['nom']);
@@ -15,8 +16,7 @@ SET NOM = '$nom',
     NOSERV = '$noserv'
 WHERE NOEMP = $noemp;"; 
 
-$bdd = mysqli_init();
-mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
+$bdd = setConnexionBDD();
 mysqli_query($bdd, $query);
 
 mysqli_close($bdd);

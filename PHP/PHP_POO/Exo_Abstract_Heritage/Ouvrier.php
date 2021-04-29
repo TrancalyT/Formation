@@ -5,7 +5,7 @@ include_once("EmployeABS.php");
 class Ouvrier extends EmployeABS{
 
     private DateTime $dateEntree;
-    public static int $smic = 2500;
+    private static int $smic = 2500;
     
     public function getSalaire() : float
     {

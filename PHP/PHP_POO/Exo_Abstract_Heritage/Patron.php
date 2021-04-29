@@ -5,12 +5,17 @@ include_once("EmployeABS.php");
 class Patron extends EmployeABS{
 
     private int $pourcentageSurCA;
-    public int $chiffreAffaire = 100000000;
+    private static int $chiffreAffaire = 50000;
     
     public function getSalaire() : float
     {
-        $salaire = ($this->chiffreAffaire * $this->pourcentageSurCA) /100;
-        return $salaire;
+        if ($this->pourcentageSurCA != NULL){
+            $salaire = self::$chiffreAffaire * $this->pourcentageSurCA /100;
+            return $salaire;
+        } else {
+            return 0;
+        }
+       
     }
 
     public function __construct($matricule, $nom, $prenom,$ddn, $pourcentageSurCA)

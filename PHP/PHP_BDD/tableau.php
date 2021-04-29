@@ -120,18 +120,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
     <?php 
 
-        $bdd = mysqli_init();
-        mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
-
-        $searchSup = mysqli_query($bdd, "SELECT DISTINCT SUP FROM EMP2;");
-        $dataSup = mysqli_fetch_all($searchSup, MYSQLI_ASSOC);
-
-        $result = mysqli_query($bdd, "SELECT E1.NOEMP AS NOEMP, E1.NOM AS NOM, E1.PRENOM AS PRENOM, E1.EMPLOI AS EMPLOI, E1.SUP AS SUP, E1.NOSERV AS NOSERV, SERVICE, E2.NOM AS NOMSUP, E2.PRENOM AS PRENOMSUP
-                                      FROM EMP2 AS E1 INNER JOIN SERV2 ON E1.noserv = SERV2.noserv
-                                                      LEFT JOIN EMP2 AS E2 ON E1.SUP = E2.NOEMP;");
-        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        foreach($data as $key => $value){
+        foreach(displayArrayTableau() as $key => $value){
             if(is_array($value)){
                 foreach($value as $key => $value){
                     if ($key == 'NOEMP'){
@@ -156,7 +145,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
                 }
             }
 
-            foreach($dataSup as $key => $value){
+            foreach(displayArraySup() as $key => $value){
               if(is_array($value)){
                 foreach($value as $key => $value){
                   if ($noemp == $value){
@@ -206,12 +195,9 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
               </tr>"; 
             }
         }
-
-        mysqli_close($bdd);
     ?>
     </table>
     </div>
-
 
 <?php
 } else {
@@ -228,8 +214,6 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 <!-- FORMULAIRE CONNEXION -->
 <?php
 
-// setConnexion();
-
 $messageErrCo = "";
 $messageSuccessCo = "";
 $messageNoMail = "";
@@ -244,13 +228,7 @@ if (isset($validerCo)){
     if(isset($mailCo) && !empty($mailCo) 
     && isset($mdpCo) && !empty($mdpCo) ){
 
-    $bdd = mysqli_init();
-    mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
-
-    $checkID = mysqli_query($bdd, "SELECT * FROM USER WHERE USER_MAIL = '$mailCo'");
-    $dataID = mysqli_fetch_all($checkID, MYSQLI_ASSOC);
-
-        foreach($dataID as $key => $value){
+        foreach(checkCo($mailCo) as $key => $value){
         if(is_array($value)){
             foreach($value as $key => $value){
                 if ($key == 'USER_PASSWORD'){
@@ -351,13 +329,7 @@ if (isset($validerInscri)){
     && isset($mdpInscri) && !empty($mdpInscri)
     && isset($ReMdpInscri) && !empty($ReMdpInscri)){
 
-      $bdd = mysqli_init();
-      mysqli_real_connect($bdd, "localhost", "toodle", "zincbigleux5906", "exo_emp_serv");
-
-      $checkDoublon = mysqli_query($bdd, "SELECT * FROM USER;");
-      $dataDoublon = mysqli_fetch_all($checkDoublon, MYSQLI_ASSOC);
-
-        foreach($dataDoublon as $key => $value){
+        foreach(checkDoublon() as $key => $value){
           if(is_array($value)){
               foreach($value as $key => $value){
                   if ($key == 'USER_NAME'){
@@ -443,7 +415,6 @@ if (isset($validerInscri)){
 <?php
 }
 ?>
-
 
 <!-- BUTTON SUPPR -->
 <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
