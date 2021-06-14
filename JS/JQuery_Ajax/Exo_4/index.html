@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset=utf-8 />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> 
+		<title>Exo 4</title> 
+	</head>
+	<body>
+        <div class="container">
+            <table class="table table-primary table-striped table-hover">
+                <thead id="headTable">
+
+                </thead>
+                <tbody id="bodyTable">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <div class="input-group mb-3 create">
+                <h1 class="align-text-center">Créer votre tableau</h1>
+            </div>
+            <div class="input-group mb-3 create">
+                <span class="input-group-text">Nombres de lignes</span>
+                <input type="number" name="line" min="1" max="10" class="form-control">
+                <span class="input-group-text">Nombres de colonnes</span>
+                <input type="number" name="col" min="1" max="10"  class="form-control">
+                <button type="button" id="Go">Go</button>
+            </div>
+
+            <div class="input-group mb-3 insert" style="display:none">
+                <h1 class="align-text-center">Entrez vos données</h1>
+            </div>
+            <div class="input-group mb-3 insert" style="display:none">
+                <span class="input-group-text">Texte</span>
+                <input type="text" name="texte" class="form-control">
+                <span class="input-group-text">Pour la ligne numéro</span>
+                <input type="number" name="lineText" min="1" max="10"  class="form-control">
+                <span class="input-group-text">Pour la colonne numéro</span>
+                <input type="number" name="colText" min="1" max="10"  class="form-control">
+                <button type="button" id="Go2">Go</button>
+            </div>
+        </div>
+
+
+	</body>
+    <script src="../../../../JQuery/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</html>

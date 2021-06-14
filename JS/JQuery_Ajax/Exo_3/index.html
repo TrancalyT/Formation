@@ -1,0 +1,46 @@
+Exercice 3 :
+
+Ecrire une fonction JavaScript permettant (grace àJQuery) de changer le contenu d'une cellule du tableau suivant.
+La fonction doit prendre trois arguments, l'indice de la ligne, l'indice de colonne et le nouveau texte
+
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<meta charset=utf-8 /> 
+		<title>Change the content of a cell</title> 
+		<style type="text/css"> 
+			body {margin: 30px;} 
+		</style>  
+	</head>
+	<body> 
+		<table id="myTable" border="1"> 
+			<tr>
+				<td>Row1 cell1</td> 
+				<td>Row1 cell2</td>
+			</tr> 
+			<tr>
+				<td>2-1</td> 
+				<td>2-2</td>
+			</tr> 
+			<tr>
+				<td>Row3 cell1</td> 
+				<td>Row3 cell2</td>
+			</tr> 
+		</table>
+        </br>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Ligne</span>
+            <input type="number" name="line" min="0" max="2" class="form-control">
+        </br>
+            <span class="input-group-text">Colonne</span>
+            <input type="number" name="col" min="0" max="1"  class="form-control">
+        </br>
+            <span class="input-group-text">Texte</span>
+            <input type="text" name="texte" class="form-control">
+        </br>
+            <button type="button" id="Change">Change it</button>
+        </div>
+	</body>
+    <script src="../../../../JQuery/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</html>

@@ -1,22 +1,14 @@
 {
 	"folders": [
 		{
-			"name": "PHP_BDD",
-			"path": "PHP\\PHP_BDD"
-		},
-		{
-			"name": "Regex",
-			"path": "PHP\\Regex"
-		},
-		{
 			"name": "Fil_Rouge",
 			"path": "..\\Fil_Rouge"
 		},
 		{
-			"path": "PHP\\PHP_POO"
+			"path": "..\\Gestion_Employe_BDD"
 		},
 		{
-			"path": "..\\Gestion_Employe_BDD"
+			"path": "JS"
 		}
 	],
 	"settings": {}
